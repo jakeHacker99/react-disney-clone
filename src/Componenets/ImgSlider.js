@@ -16,15 +16,26 @@ const ImgSlider = () => {
   };
   return (
     <Carousel {...settings}>
-      <div>
-        <h3>1</h3>
-      </div>
-      <div>
-        <h3>2</h3>
-      </div>
-      <div>
-        <h3>4</h3>
-      </div>
+      <Wrap>
+        <a>
+          <img src="/images/slider-badging.jpg" alt="" />
+        </a>
+      </Wrap>
+      <Wrap>
+        <a>
+          <img src="/images/slider-scale.jpg" alt="" />
+        </a>
+      </Wrap>
+      <Wrap>
+        <a>
+          <img src="/images/slider-badag.jpg" alt="" />
+        </a>
+      </Wrap>
+      <Wrap>
+        <a>
+          <img src="/images/slider-scales.jpg" alt="" />
+        </a>
+      </Wrap>
     </Carousel>
   );
 };
@@ -66,5 +77,7 @@ const Carousel = styled(Slider)`
     right: -75px;
   }
 `;
+
+const Wrap = styled.div``;
 
 export default ImgSlider;
