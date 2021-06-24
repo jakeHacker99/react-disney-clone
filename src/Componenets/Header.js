@@ -1,15 +1,27 @@
 import styled from "styled-components";
 
 import React from "react";
+import { auth, provider } from "../Firebase";
 
 const Header = (props) => {
+  const handleAuth = () => {
+    auth
+      .signInWithPopup(provider)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+  };
+
   return (
     <Nav>
       <Logo>
         <img src="/images/logo.svg" alt="Disney+" />
       </Logo>
       <NavMenu>
-        <a href="/home">
+        <a href="/">
           <img src="/images/home-icon.svg" alt="HOME" />
           <span>Home</span>
         </a>
@@ -30,6 +42,7 @@ const Header = (props) => {
           <span>Movies</span>
         </a>
       </NavMenu>
+      <Login onClick={handleAuth}>Login</Login>
     </Nav>
   );
 };
@@ -122,6 +135,22 @@ const NavMenu = styled.div`
   /* @media (max-width: 768px) {
     display: none;
   } */
+`;
+
+const Login = styled.a`
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 8px 16px;
+  letter-spacing: 1.5px;
+  border: 1px solid #f9f9f9;
+  border-radius: 4px;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f9f9f9;
+    color: #000;
+    border-color: transparent;
+  }
 `;
 
 export default Header;
