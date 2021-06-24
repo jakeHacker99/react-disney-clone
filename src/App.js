@@ -1,9 +1,18 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import "./App.css";
+import Login from "./Componenets/Login";
 
 function App() {
   return (
-    <div className="app">
-      <h2>disney+ clone🚀🚀🚀</h2>
+    <div className="App">
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Login />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
