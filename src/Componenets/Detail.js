@@ -62,10 +62,9 @@ const Detail = (props) => {
     </Container>
   );
 };
-
 const Container = styled.div`
-  position: absolute;
-  min-height: calc(100vh - 250px);
+  position: relative;
+  min-height: calc(100vh-250px);
   overflow-x: hidden;
   display: block;
   top: 72px;
@@ -79,11 +78,9 @@ const Background = styled.div`
   right: 0px;
   top: 0px;
   z-index: -1;
-
   img {
     width: 100vw;
     height: 100vh;
-
     @media (max-width: 768px) {
       width: initial;
     }
@@ -93,18 +90,17 @@ const Background = styled.div`
 const ImageTitle = styled.div`
   align-items: flex-end;
   display: flex;
-  --webkit-box-pack: start;
+  -webkit-box-pack: start;
   justify-content: flex-start;
   margin: 0px auto;
   height: 30vw;
   min-height: 170px;
   padding-bottom: 24px;
   width: 100%;
-
   img {
     max-width: 600px;
     min-width: 200px;
-    width: 35wh;
+    width: 35vw;
   }
 `;
 
@@ -129,27 +125,24 @@ const Player = styled.button`
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   letter-spacing: 1.8px;
   text-align: center;
   text-transform: uppercase;
-  background: rgb(249, 249, 249);
+  background: rgb (249, 249, 249);
   border: none;
   color: rgb(0, 0, 0);
-
   img {
     width: 32px;
   }
-
   &:hover {
     background: rgb(198, 198, 198);
   }
-
   @media (max-width: 768px) {
     height: 45px;
     padding: 0px 12px;
     font-size: 12px;
     margin: 0px 10px 0px 0px;
-
     img {
       width: 25px;
     }
@@ -158,7 +151,7 @@ const Player = styled.button`
 
 const Trailer = styled(Player)`
   background: rgba(0, 0, 0, 0.3);
-  border: 2px solid rgb(249, 249, 249);
+  border: 1px solid rgb(249, 249, 249);
   color: rgb(249, 249, 249);
 `;
 
@@ -173,17 +166,14 @@ const AddList = styled.div`
   border-radius: 50%;
   border: 2px solid white;
   cursor: pointer;
-
   span {
     background-color: rgb(249, 249, 249);
     display: inline-block;
-
     &:first-child {
       height: 2px;
       transform: translate(1px, 0px) rotate(0deg);
       width: 16px;
     }
-
     &:nth-child(2) {
       height: 16px;
       transform: translateX(-8px) rotate(0deg);
@@ -201,13 +191,11 @@ const GroupWatch = styled.div`
   align-items: center;
   cursor: pointer;
   background: white;
-
   div {
     height: 40px;
     width: 40px;
     background: rgb(0, 0, 0);
     border-radius: 50%;
-
     img {
       width: 100%;
     }
@@ -218,16 +206,16 @@ const SubTitle = styled.div`
   color: rgb(249, 249, 249);
   font-size: 15px;
   min-height: 20px;
-
   @media (max-width: 768px) {
     font-size: 12px;
   }
 `;
+
 const Description = styled.div`
   line-height: 1.4;
-  font-size: 16px 0px;
+  font-size: 20px;
+  padding: 16px 0px;
   color: rgb(249, 249, 249);
-
   @media (max-width: 768px) {
     font-size: 14px;
   }
